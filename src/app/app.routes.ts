@@ -8,11 +8,13 @@ import { PostListaComponent } from './dashboard/posts/post-lista/post-lista.comp
 import { CursoDetalleComponent } from './dashboard/cursos/curso-detalle/curso-detalle.component';
 import { PostDetalleComponent } from './dashboard/posts/post-detalle/post-detalle.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
     {path: "login", component: LoginComponent},
     {
         path: 'dashboard', component: DashboardComponent,
+        canActivate: [authGuard],
         children: [
             {path: 'home', component: HomeComponent},
             {path: 'curso', component: CursoListaComponent},
