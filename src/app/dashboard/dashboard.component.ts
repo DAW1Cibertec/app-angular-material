@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { MaterialModule } from '../angular-material/material/material.module';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,11 +13,10 @@ import { MaterialModule } from '../angular-material/material/material.module';
 export class DashboardComponent {
 
   constructor(private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ){
-
   }
-  
   irPaginaHome(): void{
     this.router.navigate(['home'], {relativeTo: this.route});
   }
@@ -30,7 +30,7 @@ export class DashboardComponent {
     this.router.navigate(['post'], {relativeTo: this.route});
   }
   cerrarSesion(): void{
+    this.authService.logout();
     this.router.navigate(['login']);
   }
-
 }
