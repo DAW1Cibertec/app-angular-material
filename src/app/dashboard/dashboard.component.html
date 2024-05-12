@@ -1,3 +1,11 @@
-<p>dashboard works!</p>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span (click)="irPaginaHome()">APP Cibertec</span>
+        <button (click)="irPaginaEjemplos()" mat-button>Ejemplos A-Material</button>
+        <button (click)="irPaginaCurso()" mat-button>Cursos</button>
+        <button (click)="irPaginaPost()" mat-button>Posts</button>
+        <button (click)="cerrarSesion()" mat-button>Salir</button>        
+    </mat-toolbar-row>    
+</mat-toolbar>
 <router-outlet></router-outlet>
 
