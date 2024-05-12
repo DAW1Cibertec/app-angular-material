@@ -1,1 +1,28 @@
-<p>post-lista works!</p>
+<div class="module-header">
+    <div class="left">
+        <h3>Lista de Posts</h3>
+    </div>
+    <div class="module-body">
+        <table>
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Title</td>
+                    <td>Body</td>
+                    <td>UserID</td>
+                </tr>
+            </thead>
+            <tbody>
+                @for (post of posts; track $index) {
+                    <tr (click)="irDetallePost(post.id)">
+                        <td>{{post.id}}</td>
+                        <td>{{post.title}}</td>
+                        <td>{{post.body}}</td>
+                        <td>{{post.userId}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>        
+    </div>
+</div>
+
